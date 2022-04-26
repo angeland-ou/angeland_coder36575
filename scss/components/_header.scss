@@ -1,0 +1,17 @@
+/* ESTILOS DEL HEADER (Excepto _menu.scss) DE LA WEB ******************************** */
+header{
+    padding: 20px;
+    z-index: 9;
+    position: sticky;
+    top:0px;
+    background: transparent;
+    height: 110px;
+    .header__logo img{
+        max-height: 65px;
+        margin-left:30px;
+        &:hover {
+            rotate: 360deg;
+            transition: all 0.4s ease-in-out;
+        }
+    }
+}

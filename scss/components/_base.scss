@@ -1,0 +1,71 @@
+/* ESTILOS BASE GENERALES DE LA WEB ******************************** */
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+// VARIABLES GENERALES
+$ancho-maximo: 1470px;
+$color-principal: #fadde1;
+$color-secundario: #000;
+$color-dark: #444;
+$imagesPath:"../images";
+// FIN VARIABLES GENERALES
+
+body {
+    background-image: url("../images/patterns/ep_naturalwhite.png");
+    // cursor:url(url), auto; 
+}
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat", sans-serif;
+}
+::selection, ::-moz-selection{
+    background-color:$color-principal;
+    color: $color-secundario;
+}
+main{
+    padding:20px;
+}
+aside{
+    li, p, a{
+        color:#fff;
+    }
+}
+p, p a, li a {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+a {
+    color:$color-secundario;
+    text-decoration:none;
+}
+main a:hover, footer a:hover{
+    color:$color-dark;
+}
+hr {
+    border: 1px dashed #fff;
+    margin: 50px 0;
+}
+.contenido{
+    max-width: $ancho-maximo;
+    margin: auto;
+    h1 {
+    padding-bottom: 20px;
+    }
+}
+/* Animaciones de entrada para las páginas */
+body {
+    animation: fadein 2s;
+}
+@keyframes fadein {
+    0%{
+        opacity:0;
+    } 
+    50%{
+        opacit:0.5;
+    }
+    100%{
+        opacity:1;
+    }
+}

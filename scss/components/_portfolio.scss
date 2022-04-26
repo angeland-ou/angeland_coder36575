@@ -1,0 +1,96 @@
+/* Estilos para la página PORTFOLIO ********************************* */
+.flex-box-portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+}
+.flex-box-portfolio__item {
+    width: calc(50% - 5px);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 10px;
+    background-color: #fadde14f;
+    margin-bottom: 10px;
+    h2 {
+        padding-bottom: 15px;
+    }
+    p {
+        padding-bottom: 20px;
+    }
+    .imagen {
+        height: 500px;
+        width: 1000px;
+        max-width: 100%;
+        overflow: hidden;
+        background-color: $color-secundario;
+    }
+    &:nth-child(even){
+        margin-right: 0;
+    }
+    &:nth-child(odd){
+        margin-right: 10px;
+    }
+}
+
+@for $portfolio from 1 through 24 {
+    .p#{$portfolio}, .p#{$portfolio} .imagen{
+        background-image: url("#{$imagesPath}/trabajos/img-#{$portfolio}.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+    .p#{$portfolio}{
+        background-blend-mode:color-burn;
+    }
+}
+/* Estilos para las páginas PORTFOLIO SINGLE  ********************************* */
+
+/* GALERÍA hecha con grid */
+.grid-gallery {
+    display: grid;
+    grid-auto-rows: 200px;
+    grid-gap: 10px;
+    grid-auto-flow: row dense; 
+    margin-bottom: 50px;
+}
+.grid-gallery__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+@media all and (min-width: 320px) {
+    .grid-gallery {
+        grid-template-columns: 1fr; 
+    } 
+}
+@media all and (min-width: 640px) {
+    .grid-gallery {
+        grid-template-columns: 1fr 1fr; 
+    }
+}
+@media all and (min-width: 1080px) {
+    .grid-gallery {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+@media all and (min-width: 1300px) {
+    .grid-gallery {
+        grid-template-columns: repeat(4, 1fr); 
+    }
+}
+
+@media all and (max-width:1080px){
+    .flex-box-portfolio__item .imagen {
+        height: 350px;
+    }
+}
+@media all and (max-width:640px){
+    .flex-box-portfolio__item {
+        width: 100%;
+        &:nth-child(odd){
+            margin-right: 0;
+        }
+    }
+}

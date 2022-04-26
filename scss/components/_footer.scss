@@ -1,0 +1,44 @@
+$redes: (
+    linkedin: #0a66c2,
+    instagram: rgb(197, 54, 114),
+    whatsapp: green,
+    mail: black
+);
+@each $nombrered, $colorred in $redes{
+    .bi-#{$nombrered}{
+        background-color:$colorred;
+    }
+}
+.icono-social {
+    width: 28px;
+    height: 29px;
+    color: #fff;
+    padding:6px;
+    border-radius:50px;
+    margin-top:5px;
+    display:inline-block;
+    &:hover{
+        background-color:#000;
+        transition: all 0.8s ease-in-out;
+    }
+}
+[class^="bi-"]::before, [class*=" bi-"]::before {
+    vertical-align: 0.05em !important;
+}
+section.enlaces-redes{
+    position: fixed;
+    right: 20px;
+    bottom: 60px;
+    max-width: 40px;
+    z-index: 6;
+}
+.bottom{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background: linear-gradient(225deg, transparent, rgba(255, 255, 255, 0.658)) ;
+    padding: 10px;
+    text-align: center;
+    z-index: 10;
+    left: 0;
+}

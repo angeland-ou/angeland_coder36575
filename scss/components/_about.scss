@@ -1,0 +1,54 @@
+/* Estilos para la página ABOUT ********************************* */
+#about-page .contenido {
+    width: 100vw;
+    height: calc(100vh - 110px);
+    align-items: center;
+    overflow-y:hidden;
+    padding: 0px;
+    max-width:100vw;
+}
+#about-page .contenido .mitad-izq {
+width: 50vw;
+height: 100vh;
+float: left;
+padding:50px 20px;
+background-color: transparent;
+}
+#about-page .contenido .mitad-dcha {
+    background-color: #eee;
+    background-image: url("../images/img-wireframe.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 50vw;
+    height: 100vh;
+    float: right;
+    object-fit: cover;
+}
+
+@media only screen and (max-width : 1080px){
+    #about-page .contenido {
+        width: 100%;
+        overflow-y:auto;
+        height: fit-content;
+    }
+    #about-page .contenido .mitad-izq {
+        width: 100%;
+        height: auto;
+        background-color: #fadde14f;
+    }
+    #about-page .contenido .mitad-dcha {
+        width: 100%;
+        float: none;
+        height: 100vh;
+    }
+}
+@media only screen and (max-width : 320px){
+    #about-page .contenido .mitad-izq {
+        background-color: transparent;
+    }
+    #about-page .contenido .mitad-dcha {
+        float: left;
+        height:400px;
+    }
+}
