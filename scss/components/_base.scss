@@ -7,14 +7,36 @@
 // VARIABLES GENERALES
 $ancho-maximo: 1470px;
 $color-principal: #fadde1;
+$soft: #fadde14f;
 $color-secundario: #000;
 $color-dark: #444;
 $imagesPath:"../images";
 // FIN VARIABLES GENERALES
 
+// MAPA
+$estilos-generales: (
+    margeninferior: 100px,
+    familiatexto: "Lato",
+    mainpadding: 20px,
+    fondogenerico: url("../images/patterns/ep_naturalwhite.png"),
+    fondoblog: url("../images/patterns/lined_paper.png"),
+    cursor2: url("../images/cursor2.png"),
+    cursorcirculo: url("../images/cursor.png"),
+    cursorcuadrado: url("../images/cursor-square.png")
+);
+// FIN MAPA
+
+// MIXIN
+@mixin fondocover {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    }
+// FIN MIXIN
+
 body {
-    background-image: url("../images/patterns/ep_naturalwhite.png");
-    // cursor:url(url), auto; 
+    background-image: map-get($estilos-generales, fondogenerico);
+    cursor: map-get($estilos-generales, cursor2), auto;
 }
 body, h1, h2, h3, h4, h5, h6 {
     font-family: "Montserrat", sans-serif;
@@ -24,7 +46,7 @@ body, h1, h2, h3, h4, h5, h6 {
     color: $color-secundario;
 }
 main{
-    padding:20px;
+    padding: map-get($estilos-generales, mainpadding);
 }
 aside{
     li, p, a{
@@ -32,7 +54,7 @@ aside{
     }
 }
 p, p a, li a {
-    font-family: "Lato", sans-serif;
+    font-family: map-get($estilos-generales, familiatexto), sans-serif;
     font-weight: 300;
     letter-spacing: 1px;
 }
@@ -59,13 +81,37 @@ body {
     animation: fadein 2s;
 }
 @keyframes fadein {
-    0%{
-        opacity:0;
-    } 
-    50%{
-        opacit:0.5;
+    0% { opacity:0; } 
+    50% { opacity:0.5; }
+    100% { opacity:1; }
+}
+// botones
+.boton {
+    padding:4px 20px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background-color: $color-secundario;
+    color:$color-principal;
+    border-radius: 5px;
+    display: block;
+    &:hover{
+        background-color:$color-dark;
     }
-    100%{
-        opacity:1;
-    }
+}
+.boton-left{
+    @extend .boton;
+    margin: 10px 10px 0 0;
+    width: auto;
+    float:left;
+    text-align:center;
+}
+a.ver {
+    display: contents;
+}
+.boton-full{
+    @extend .boton;
+    margin: 15px 0 0 0;
+    text-align: center;
+    width: 100%;
 }

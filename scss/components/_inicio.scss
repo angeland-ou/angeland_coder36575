@@ -4,9 +4,8 @@
     margin-top: -110px;
     width: 100%;
     background-image: url("#{$imagesPath}/img-wireframe.jpg");
-    background-position: center center;
-    background-size: cover;
     margin-bottom: 100px;
+    @include fondocover;
 }
 .intro {
     height: 100vh;
@@ -37,8 +36,7 @@
         height: 400px;
         width: 25%;
         display: flex;
-        background-position: center;
-        background-size: cover;
+        @include fondocover;
         a {
             height: 100%;
             width: 100%;
@@ -48,8 +46,7 @@
             align-items: center;
             padding: 20px;
             &:hover{
-            cursor: crosshair;
-            // Personalizado cursor:url(url), auto; 
+            cursor: map-get($estilos-generales, cursorcuadrado), auto;
             }
         }
     }
@@ -86,9 +83,8 @@
             align-items: flex-start;
             padding: 20px;
             &:hover{
-                cursor: crosshair;
+                cursor: map-get($estilos-generales, cursorcirculo), auto;
             }
-                // Personalizado cursor:url(url), auto; 
         }
     }
     @for $noticia from 1 through 3 {

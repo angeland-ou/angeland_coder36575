@@ -10,7 +10,7 @@
     flex-flow: column nowrap;
     align-items: center;
     padding: 10px;
-    background-color: #fadde14f;
+    background-color: $soft;
     margin-bottom: 10px;
     h2 {
         padding-bottom: 15px;
@@ -36,8 +36,7 @@
 @for $portfolio from 1 through 24 {
     .p#{$portfolio}, .p#{$portfolio} .imagen{
         background-image: url("#{$imagesPath}/trabajos/img-#{$portfolio}.jpg");
-        background-position: center;
-        background-size: cover;
+        @include fondocover;
     }
     .p#{$portfolio}{
         background-blend-mode:color-burn;

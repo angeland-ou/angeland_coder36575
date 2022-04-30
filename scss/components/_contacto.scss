@@ -32,12 +32,12 @@ input[type=submit] {
     background-color: $color-secundario;
     border-color: $color-secundario;
     color:$color-principal;
-    cursor: pointer;
+    cursor: map-get($estilos-generales, cursor2), auto;
     &:hover {
         background-color: $color-principal;
         border-color: $color-principal;
         color: $color-secundario;
-        cursor: pointer;
+        cursor: map-get($estilos-generales, cursor2), auto;
         box-shadow: 0px 2px 3px #ccc;
     }
 }

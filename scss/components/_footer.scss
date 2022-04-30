@@ -1,14 +1,20 @@
+//MAPA
 $redes: (
     linkedin: #0a66c2,
     instagram: rgb(197, 54, 114),
     whatsapp: green,
     mail: black
 );
+// FIN MAPA
+
+// EACH
 @each $nombrered, $colorred in $redes{
     .bi-#{$nombrered}{
         background-color:$colorred;
     }
 }
+// FIN EACH
+
 .icono-social {
     width: 28px;
     height: 29px;
@@ -18,7 +24,7 @@ $redes: (
     margin-top:5px;
     display:inline-block;
     &:hover{
-        background-color:#000;
+        background-color:$color-dark;
         transition: all 0.8s ease-in-out;
     }
 }
