@@ -1,53 +1,84 @@
 /* Estilos para la página ABOUT ********************************* */
-#about-page .contenido {
-    width: 100vw;
-    height: calc(100vh - 110px);
-    align-items: center;
-    overflow-y:hidden;
-    padding: 0px;
-    max-width:100vw;
-    .mitad-izq {
-        width: 50vw;
-        height: 100vh;
-        float: left;
-        padding:50px 20px;
-        background-color: transparent;
-        }
-    .mitad-dcha {
-    background-color: #eee;
-    background-image: url("../images/img-wireframe.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    width: 50vw;
-    height: 100vh;
-    float: right;
-    object-fit: cover;
-    }
+
+#about-page {
+    background-image: map-get($estilos-generales, fondoblog);
+    // background-position: center center;
+    // background-size: cover;
+    // background-repeat: none !important;
 }
-@media only screen and (max-width : 1080px){
-    #about-page .contenido {
+.about{
+    margin-bottom: 100px;
+    .about__item-intro{
+        margin-top: 20px;
+        border-top: 1px solid #000;
+        text-align: left;
         width: 100%;
-        overflow-y:auto;
-        height: fit-content;
-        .mitad-izq {
-            width: 100%;
-            height: auto;
+        padding-top: 10px;
+    }
+    h3{
+        padding: 20px 0 10px 0;
+    }
+    .about__item{
+        padding: 20px 0px 20px 0px;
+        display:flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items:flex-start;
+        .about__item-image{
+            width: 50%;
             background-color: $soft;
+            padding: 20px 160px 20px 20px;
+            img{
+                width: 100%;
+            }
         }
-        .mitad-dcha {
-            width: 100%;
-            float: none;
-            height: 100vh;
+        .about__item-description{
+            width: 70%;
+            margin-top: 60px;
+            margin-left: -140px;
+            z-index: 2;
+            padding: 15px;
         }
     }
 }
-@media only screen and (max-width : 320px){
-    #about-page .contenido .mitad-izq {
-        background-color: transparent;
+
+    @media all and (max-width:1080px){ 
+        .about .about__item{
+            display:block;
+            .about__item-intro{
+                width: 50%;
+            }
+            .about__item-image{
+                width: 100%;
+                margin-top: 20px;
+                padding: 20px 20px 20px 20px;
+                img{
+                    width: 50%;
+                }
+            }
+            .about__item-description{
+                width: 100%;
+                margin-top: 20px;
+                margin-left: 0px;
+            }
+        }
     }
-    #about-page .contenido .mitad-dcha {
-        float: left;
-        height:400px;
+    @media all and (max-width:640px){
+        .about .about__item{
+            display:block;
+            .about__item-image{
+                width: 100%;
+                margin-top: 20px;
+                padding: 20px 20px 20px 20px;
+                margin-left: -20px;
+                img{
+                    width: 100%;
+                }
+            }
+            .about__item-description{
+                width: 100%;
+                margin-left: 0px;
+                margin-top: 20px;
+            }
+        }
     }
-}

@@ -11,6 +11,7 @@ $soft: #fadde14f;
 $color-secundario: #000;
 $color-dark: #444;
 $imagesPath:"../images";
+$bordeblanco: 10px solid #fff;
 // FIN VARIABLES GENERALES
 
 // MAPA
@@ -18,11 +19,12 @@ $estilos-generales: (
     margeninferior: 100px,
     familiatexto: "Lato",
     mainpadding: 20px,
-    fondogenerico: url("../images/patterns/ep_naturalwhite.png"),
-    fondoblog: url("../images/patterns/lined_paper.png"),
-    cursor2: url("../images/cursor2.png"),
-    cursorcirculo: url("../images/cursor.png"),
-    cursorcuadrado: url("../images/cursor-square.png")
+    fondogenerico: url("#{$imagesPath}/patterns/ep_naturalwhite.png"),
+    fondoblog: url("#{$imagesPath}/patterns/lined_paper.png"),
+    fondoabout: url("#{$imagesPath}/ny.jpg"),
+    cursor2: url("#{$imagesPath}/cursor2.png"),
+    cursorcirculo: url("#{$imagesPath}/cursor.png"),
+    cursorcuadrado: url("#{$imagesPath}/cursor-square.png")
 );
 // FIN MAPA
 
