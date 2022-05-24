@@ -10,10 +10,11 @@
     flex-flow: column nowrap;
     align-items: center;
     padding: 10px;
-    background-color: #fadde14f;
+    background-color: rgba(255,255,255,.5);
     margin-bottom: 10px;
     h2 {
         padding-bottom: 15px;
+        text-align: center;
     }
     p {
         padding-bottom: 20px;
@@ -24,6 +25,7 @@
         max-width: 100%;
         overflow: hidden;
         background-color: $color-secundario;
+        border: $bordeblanco;
     }
     &:nth-child(even){
         margin-right: 0;
@@ -34,10 +36,9 @@
 }
 
 @for $portfolio from 1 through 24 {
-    .p#{$portfolio}, .p#{$portfolio} .imagen{
+    .p#{$portfolio} .imagen{
         background-image: url("#{$imagesPath}/trabajos/img-#{$portfolio}.jpg");
-        background-position: center;
-        background-size: cover;
+        @include fondocover;
     }
     .p#{$portfolio}{
         background-blend-mode:color-burn;
@@ -45,10 +46,10 @@
 }
 /* Estilos para las páginas PORTFOLIO SINGLE  ********************************* */
 
-/* GALERÍA hecha con grid */
+// GALERÍA hecha con grid
 .grid-gallery {
     display: grid;
-    grid-auto-rows: 200px;
+    grid-auto-rows: 300px;
     grid-gap: 10px;
     grid-auto-flow: row dense; 
     margin-bottom: 50px;
@@ -83,7 +84,7 @@
 
 @media all and (max-width:1080px){
     .flex-box-portfolio__item .imagen {
-        height: 350px;
+        height: 450px;
     }
 }
 @media all and (max-width:640px){

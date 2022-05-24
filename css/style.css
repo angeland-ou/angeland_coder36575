@@ -6,7 +6,8 @@
   box-sizing: border-box; }
 
 body {
-  background-image: url("../images/patterns/ep_naturalwhite.png"); }
+  background-image: url("../images/patterns/ep_naturalwhite.png");
+  cursor: url("../images/cursor2.png"), auto; }
 
 body, h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat", sans-serif; }
@@ -51,9 +52,35 @@ body {
   0% {
     opacity: 0; }
   50% {
-    opacit: 0.5; }
+    opacity: 0.5; }
   100% {
     opacity: 1; } }
+
+.boton, .boton-left, .boton-full {
+  padding: 4px 20px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-color: #000;
+  color: #fadde1;
+  border-radius: 5px;
+  display: block; }
+  .boton:hover, .boton-left:hover, .boton-full:hover {
+    background-color: #444; }
+
+.boton-left {
+  margin: 10px 10px 0 0;
+  width: auto;
+  float: left;
+  text-align: center; }
+
+a.ver {
+  display: contents; }
+
+.boton-full {
+  margin: 15px 0 0 0;
+  text-align: center;
+  width: 100%; }
 
 /* ESTILOS DEL HEADER (Excepto _menu.scss) DE LA WEB ******************************** */
 header {
@@ -62,7 +89,8 @@ header {
   position: sticky;
   top: 0px;
   background: transparent;
-  height: 110px; }
+  height: 110px;
+  background-color: rgba(255, 255, 255, 0.7); }
   header .header__logo img {
     max-height: 65px;
     margin-left: 30px; }
@@ -79,6 +107,8 @@ header {
   width: 100%;
   background: #000;
   transition: all 0.6s ease-in-out; }
+  .menu__menu-box ul li a:hover {
+    cursor: url("../images/cursor2.png"), auto; }
 
 #active:checked ~ .menu__menu-box {
   right: 0; }
@@ -94,7 +124,7 @@ header {
   line-height: 50px;
   border-radius: 50%;
   font-size: 30px;
-  cursor: pointer;
+  cursor: url("../images/cursor2.png"), auto;
   transition: all 0.3s ease-in-out; }
   .menu-btn span {
     content: "";
@@ -122,6 +152,8 @@ header {
     border-bottom: 1px solid #000;
     transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
     transform: translateY(8px); }
+  .menu-btn:hover {
+    cursor: url("../images/cursor2.png"), auto; }
 
 .close {
   z-index: 1;
@@ -219,7 +251,6 @@ input#active[type="checkbox"] {
 #active:checked ~ .menu__menu-box ul li a {
   transform: none;
   transition-timing-function: ease, cubic-bezier(0.1, 1.3, 0.3, 1);
-  /* easeOutBackを緩めた感じ */
   transition-delay: .6s;
   transform: translateX(-100px); }
 
@@ -244,7 +275,7 @@ input#active[type="checkbox"] {
   margin-top: 5px;
   display: inline-block; }
   .icono-social:hover {
-    background-color: #000;
+    background-color: #444;
     transition: all 0.8s ease-in-out; }
 
 [class^="bi-"]::before, [class*=" bi-"]::before {
@@ -272,10 +303,11 @@ section.enlaces-redes {
   height: 100vh;
   margin-top: -110px;
   width: 100%;
-  background-image: url("../images/img-wireframe.jpg");
-  background-position: center center;
+  background-image: url("../images/about-me.jpg");
+  margin-bottom: 100px;
+  background-repeat: no-repeat;
   background-size: cover;
-  margin-bottom: 100px; }
+  background-position: center center; }
 
 .intro {
   height: 100vh;
@@ -288,7 +320,9 @@ section.enlaces-redes {
     height: auto;
     margin: 100px; }
     .intro .intro-block h1 {
-      max-width: 65%; }
+      max-width: 65%;
+      padding: 20px;
+      background-color: white; }
 
 #inicio-page h2 {
   padding: 10px 0px 50px 0px; }
@@ -304,8 +338,10 @@ section.enlaces-redes {
     height: 400px;
     width: 25%;
     display: flex;
-    background-position: center;
-    background-size: cover; }
+    border: 10px solid #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center; }
     .ultimos-trabajos .ultimos-trabajos__item a {
       height: 100%;
       width: 100%;
@@ -315,7 +351,7 @@ section.enlaces-redes {
       align-items: center;
       padding: 20px; }
       .ultimos-trabajos .ultimos-trabajos__item a:hover {
-        cursor: crosshair; }
+        cursor: url("../images/cursor-square.png"), auto; }
   .ultimos-trabajos .t1 {
     background-image: url("../images/trabajos/img-1.jpg"); }
   .ultimos-trabajos .t2 {
@@ -351,7 +387,7 @@ section.enlaces-redes {
       align-items: flex-start;
       padding: 20px; }
       .ultimas-noticias .ultimas-noticias__item a:hover {
-        cursor: crosshair; }
+        cursor: url("../images/cursor.png"), auto; }
   .ultimas-noticias .n1 {
     background-image: url("../images/noticias/img-1.jpg"); }
   .ultimas-noticias .n2 {
@@ -416,52 +452,68 @@ section.enlaces-redes {
     margin-left: 0px; } }
 
 /* Estilos para la página ABOUT ********************************* */
-#about-page .contenido {
-  width: 100vw;
-  height: calc(100vh - 110px);
-  align-items: center;
-  overflow-y: hidden;
-  padding: 0px;
-  max-width: 100vw; }
+#about-page {
+  background-image: url("../images/patterns/lined_paper.png"); }
 
-#about-page .contenido .mitad-izq {
-  width: 50vw;
-  height: 100vh;
-  float: left;
-  padding: 50px 20px;
-  background-color: transparent; }
-
-#about-page .contenido .mitad-dcha {
-  background-color: #eee;
-  background-image: url("../images/img-wireframe.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  width: 50vw;
-  height: 100vh;
-  float: right;
-  object-fit: cover; }
-
-@media only screen and (max-width: 1080px) {
-  #about-page .contenido {
+.about {
+  margin-bottom: 100px; }
+  .about .about__item-intro {
+    margin-top: 20px;
+    border-top: 1px solid #000;
+    text-align: left;
     width: 100%;
-    overflow-y: auto;
-    height: fit-content; }
-  #about-page .contenido .mitad-izq {
-    width: 100%;
-    height: auto;
-    background-color: #fadde14f; }
-  #about-page .contenido .mitad-dcha {
-    width: 100%;
-    float: none;
-    height: 100vh; } }
+    padding-top: 10px; }
+  .about h3 {
+    padding: 20px 0 10px 0; }
+  .about .about__item {
+    padding: 20px 0px 20px 0px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: flex-start; }
+    .about .about__item .about__item-image {
+      width: 50%;
+      background-color: #fadde14f;
+      padding: 20px 160px 20px 20px; }
+      .about .about__item .about__item-image img {
+        width: 100%; }
+    .about .about__item .about__item-description {
+      width: 70%;
+      margin-top: 60px;
+      margin-left: -140px;
+      z-index: 2;
+      padding: 15px; }
 
-@media only screen and (max-width: 320px) {
-  #about-page .contenido .mitad-izq {
-    background-color: transparent; }
-  #about-page .contenido .mitad-dcha {
-    float: left;
-    height: 400px; } }
+@media all and (max-width: 1080px) {
+  .about .about__item {
+    display: block; }
+    .about .about__item .about__item-intro {
+      width: 50%; }
+    .about .about__item .about__item-image {
+      width: 100%;
+      margin-top: 20px;
+      padding: 20px 20px 20px 20px; }
+      .about .about__item .about__item-image img {
+        width: 50%; }
+    .about .about__item .about__item-description {
+      width: 100%;
+      margin-top: 20px;
+      margin-left: 0px; } }
+
+@media all and (max-width: 640px) {
+  .about .about__item {
+    display: block; }
+    .about .about__item .about__item-image {
+      width: 100%;
+      margin-top: 20px;
+      padding: 20px 20px 20px 20px;
+      margin-left: -20px; }
+      .about .about__item .about__item-image img {
+        width: 100%; }
+    .about .about__item .about__item-description {
+      width: 100%;
+      margin-left: 0px;
+      margin-top: 20px; } }
 
 /* Estilos para la página PORTFOLIO ********************************* */
 .flex-box-portfolio {
@@ -475,10 +527,11 @@ section.enlaces-redes {
   flex-flow: column nowrap;
   align-items: center;
   padding: 10px;
-  background-color: #fadde14f;
+  background-color: rgba(255, 255, 255, 0.5);
   margin-bottom: 10px; }
   .flex-box-portfolio__item h2 {
-    padding-bottom: 15px; }
+    padding-bottom: 15px;
+    text-align: center; }
   .flex-box-portfolio__item p {
     padding-bottom: 20px; }
   .flex-box-portfolio__item .imagen {
@@ -486,209 +539,233 @@ section.enlaces-redes {
     width: 1000px;
     max-width: 100%;
     overflow: hidden;
-    background-color: #000; }
+    background-color: #000;
+    border: 10px solid #fff; }
   .flex-box-portfolio__item:nth-child(even) {
     margin-right: 0; }
   .flex-box-portfolio__item:nth-child(odd) {
     margin-right: 10px; }
 
-.p1, .p1 .imagen {
+.p1 .imagen {
   background-image: url("../images/trabajos/img-1.jpg");
-  background-position: center;
-  background-size: cover; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 
 .p1 {
   background-blend-mode: color-burn; }
 
-.p2, .p2 .imagen {
+.p2 .imagen {
   background-image: url("../images/trabajos/img-2.jpg");
-  background-position: center;
-  background-size: cover; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 
 .p2 {
   background-blend-mode: color-burn; }
 
-.p3, .p3 .imagen {
+.p3 .imagen {
   background-image: url("../images/trabajos/img-3.jpg");
-  background-position: center;
-  background-size: cover; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 
 .p3 {
   background-blend-mode: color-burn; }
 
-.p4, .p4 .imagen {
+.p4 .imagen {
   background-image: url("../images/trabajos/img-4.jpg");
-  background-position: center;
-  background-size: cover; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 
 .p4 {
   background-blend-mode: color-burn; }
 
-.p5, .p5 .imagen {
+.p5 .imagen {
   background-image: url("../images/trabajos/img-5.jpg");
-  background-position: center;
-  background-size: cover; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 
 .p5 {
   background-blend-mode: color-burn; }
 
-.p6, .p6 .imagen {
+.p6 .imagen {
   background-image: url("../images/trabajos/img-6.jpg");
-  background-position: center;
-  background-size: cover; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 
 .p6 {
   background-blend-mode: color-burn; }
 
-.p7, .p7 .imagen {
+.p7 .imagen {
   background-image: url("../images/trabajos/img-7.jpg");
-  background-position: center;
-  background-size: cover; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 
 .p7 {
   background-blend-mode: color-burn; }
 
-.p8, .p8 .imagen {
+.p8 .imagen {
   background-image: url("../images/trabajos/img-8.jpg");
-  background-position: center;
-  background-size: cover; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 
 .p8 {
   background-blend-mode: color-burn; }
 
-.p9, .p9 .imagen {
+.p9 .imagen {
   background-image: url("../images/trabajos/img-9.jpg");
-  background-position: center;
-  background-size: cover; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 
 .p9 {
   background-blend-mode: color-burn; }
 
-.p10, .p10 .imagen {
+.p10 .imagen {
   background-image: url("../images/trabajos/img-10.jpg");
-  background-position: center;
-  background-size: cover; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 
 .p10 {
   background-blend-mode: color-burn; }
 
-.p11, .p11 .imagen {
+.p11 .imagen {
   background-image: url("../images/trabajos/img-11.jpg");
-  background-position: center;
-  background-size: cover; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 
 .p11 {
   background-blend-mode: color-burn; }
 
-.p12, .p12 .imagen {
+.p12 .imagen {
   background-image: url("../images/trabajos/img-12.jpg");
-  background-position: center;
-  background-size: cover; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 
 .p12 {
   background-blend-mode: color-burn; }
 
-.p13, .p13 .imagen {
+.p13 .imagen {
   background-image: url("../images/trabajos/img-13.jpg");
-  background-position: center;
-  background-size: cover; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 
 .p13 {
   background-blend-mode: color-burn; }
 
-.p14, .p14 .imagen {
+.p14 .imagen {
   background-image: url("../images/trabajos/img-14.jpg");
-  background-position: center;
-  background-size: cover; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 
 .p14 {
   background-blend-mode: color-burn; }
 
-.p15, .p15 .imagen {
+.p15 .imagen {
   background-image: url("../images/trabajos/img-15.jpg");
-  background-position: center;
-  background-size: cover; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 
 .p15 {
   background-blend-mode: color-burn; }
 
-.p16, .p16 .imagen {
+.p16 .imagen {
   background-image: url("../images/trabajos/img-16.jpg");
-  background-position: center;
-  background-size: cover; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 
 .p16 {
   background-blend-mode: color-burn; }
 
-.p17, .p17 .imagen {
+.p17 .imagen {
   background-image: url("../images/trabajos/img-17.jpg");
-  background-position: center;
-  background-size: cover; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 
 .p17 {
   background-blend-mode: color-burn; }
 
-.p18, .p18 .imagen {
+.p18 .imagen {
   background-image: url("../images/trabajos/img-18.jpg");
-  background-position: center;
-  background-size: cover; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 
 .p18 {
   background-blend-mode: color-burn; }
 
-.p19, .p19 .imagen {
+.p19 .imagen {
   background-image: url("../images/trabajos/img-19.jpg");
-  background-position: center;
-  background-size: cover; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 
 .p19 {
   background-blend-mode: color-burn; }
 
-.p20, .p20 .imagen {
+.p20 .imagen {
   background-image: url("../images/trabajos/img-20.jpg");
-  background-position: center;
-  background-size: cover; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 
 .p20 {
   background-blend-mode: color-burn; }
 
-.p21, .p21 .imagen {
+.p21 .imagen {
   background-image: url("../images/trabajos/img-21.jpg");
-  background-position: center;
-  background-size: cover; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 
 .p21 {
   background-blend-mode: color-burn; }
 
-.p22, .p22 .imagen {
+.p22 .imagen {
   background-image: url("../images/trabajos/img-22.jpg");
-  background-position: center;
-  background-size: cover; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 
 .p22 {
   background-blend-mode: color-burn; }
 
-.p23, .p23 .imagen {
+.p23 .imagen {
   background-image: url("../images/trabajos/img-23.jpg");
-  background-position: center;
-  background-size: cover; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 
 .p23 {
   background-blend-mode: color-burn; }
 
-.p24, .p24 .imagen {
+.p24 .imagen {
   background-image: url("../images/trabajos/img-24.jpg");
-  background-position: center;
-  background-size: cover; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 
 .p24 {
   background-blend-mode: color-burn; }
 
 /* Estilos para las páginas PORTFOLIO SINGLE  ********************************* */
-/* GALERÍA hecha con grid */
 .grid-gallery {
   display: grid;
-  grid-auto-rows: 200px;
+  grid-auto-rows: 300px;
   grid-gap: 10px;
   grid-auto-flow: row dense;
   margin-bottom: 50px; }
@@ -716,7 +793,7 @@ section.enlaces-redes {
 
 @media all and (max-width: 1080px) {
   .flex-box-portfolio__item .imagen {
-    height: 350px; } }
+    height: 450px; } }
 
 @media all and (max-width: 640px) {
   .flex-box-portfolio__item {
@@ -725,6 +802,9 @@ section.enlaces-redes {
       margin-right: 0; } }
 
 /* Estilos para la página Blog ********************************* */
+#blog-page, #blog-single {
+  background-image: url("../images/patterns/lined_paper.png"); }
+
 .blog {
   margin-bottom: 100px; }
   .blog .blog__item {
@@ -843,12 +923,12 @@ input[type=submit] {
   background-color: #000;
   border-color: #000;
   color: #fadde1;
-  cursor: pointer; }
+  cursor: url("../images/cursor2.png"), auto; }
   input[type=submit]:hover {
     background-color: #fadde1;
     border-color: #fadde1;
     color: #000;
-    cursor: pointer;
+    cursor: url("../images/cursor2.png"), auto;
     box-shadow: 0px 2px 3px #ccc; }
 
 textarea {

@@ -3,10 +3,9 @@
     height: 100vh;
     margin-top: -110px;
     width: 100%;
-    background-image: url("#{$imagesPath}/img-wireframe.jpg");
-    background-position: center center;
-    background-size: cover;
+    background-image: url("#{$imagesPath}/about-me.jpg");
     margin-bottom: 100px;
+    @include fondocover;
 }
 .intro {
     height: 100vh;
@@ -20,6 +19,8 @@
         margin: 100px;
         h1{
             max-width: 65%;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 1);
         }
     }
 }
@@ -37,8 +38,8 @@
         height: 400px;
         width: 25%;
         display: flex;
-        background-position: center;
-        background-size: cover;
+        border: $bordeblanco;
+        @include fondocover;
         a {
             height: 100%;
             width: 100%;
@@ -48,8 +49,7 @@
             align-items: center;
             padding: 20px;
             &:hover{
-            cursor: crosshair;
-            // Personalizado cursor:url(url), auto; 
+            cursor: map-get($estilos-generales, cursorcuadrado), auto;
             }
         }
     }
@@ -86,9 +86,8 @@
             align-items: flex-start;
             padding: 20px;
             &:hover{
-                cursor: crosshair;
+                cursor: map-get($estilos-generales, cursorcirculo), auto;
             }
-                // Personalizado cursor:url(url), auto; 
         }
     }
     @for $noticia from 1 through 3 {
@@ -164,8 +163,6 @@
     }
     // ultimos trabajos section media queries 640px
     .ultimos-trabajos .ultimos-trabajos__item{
-        // width: 100%;
-        // margin-right: 0px;
         height: 300px;
     }
     .ultimos-trabajos .t1, .ultimos-trabajos .t2, .ultimos-trabajos .t3, .ultimos-trabajos .t4{
@@ -173,13 +170,6 @@
         margin-right: 0px;
     }
     // ultimas noticias section media queries 640px
-
-    // .ultimas-noticias__item {
-    //     // width: 100%;
-    //     // margin-right: 0px;
-    //     // margin-left: 0px;
-    //     // height: 300px;
-    // }
     .ultimas-noticias .n1, .ultimas-noticias .n2, .ultimas-noticias .n3 {
         width: 100%;
         height: 300px;
